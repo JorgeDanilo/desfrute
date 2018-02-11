@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"  />
+
+    <TableRow
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:id="@+id/labelDataCadastro"
+            android:text="Data Cadastro" />
+
+        <EditText
+            android:id="@+id/txtDataCadastro"
+            android:layout_marginRight="11dp"
+            android:inputType="date" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/labelNome"
+            android:layout_marginLeft="10dp"
+            android:text="Nome" />
+
+        <EditText
+            android:id="@+id/txtNome"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/labelValor"
+            android:layout_marginLeft="10dp"
+            android:text="Valor" />
+
+        <EditText
+            android:layout_marginRight="10dp"
+            android:id="@+id/txtValor" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/labelMotivo"
+            android:layout_marginLeft="10dp"
+            android:text="Motivo" />
+
+        <EditText
+            android:layout_marginRight="10dp"
+            android:id="@+id/txtMotivo" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/labelPrioridade"
+            android:layout_marginLeft="10dp"
+            android:text="Prioridade" />
+
+        <Spinner
+            android:layout_marginRight="10dp"
+            android:id="@+id/spPrioridade" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/labelTipo"
+            android:text="Tipo" />
+
+        <Spinner
+            android:layout_marginRight="10dp"
+            android:id="@+id/spTipo" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/labelTipoPagamento"
+            android:layout_marginLeft="10dp"
+            android:text="Tipo Pagamento" />
+
+        <Spinner
+            android:layout_marginRight="10dp"
+            android:id="@+id/spTipoPagamento" />
+    </TableRow>
+
+</TableLayout>
