@@ -1,4 +1,4 @@
-package com.example.jdgomes.desfrute;
+package com.example.jdgomes.desfrute.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
