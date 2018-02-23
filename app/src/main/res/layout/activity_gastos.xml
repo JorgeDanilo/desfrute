@@ -37,6 +37,7 @@
             android:layout_marginRight="11dp"
             android:hint="@string/dtCadastro"
             android:layout_width="match_parent"
+            android:backgroundTint="@color/gray"
             android:inputType="date" />
     </TableRow>
 
