@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.jdgomes.desfrute.domain.Despesa;
+import com.example.jdgomes.desfrute.domain.DespesaDB;
+
 public class GastosActivity extends AppCompatActivity {
 
     String[] tiposDeGastos;
@@ -32,13 +35,6 @@ public class GastosActivity extends AppCompatActivity {
         this.loadData();
         this.loadComponents();
 
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(GastosActivity.this, "Salvar dados", Toast.LENGTH_LONG).show();
-            }
-        });
-
     }
 
     /**
@@ -46,22 +42,20 @@ public class GastosActivity extends AppCompatActivity {
      * @return
      */
     private void loadComponents() {
-        tipoGasto = (Spinner) findViewById(R.id.spTipo);
+        this.tipoGasto = (Spinner) findViewById(R.id.spTipo);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, tiposDeGastos);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tipoGasto.setAdapter(adapter);
+        this.tipoGasto.setAdapter(adapter);
 
-        tipoPagamentoSpinner = (Spinner) findViewById(R.id.spTipoPagamento);
+        this.tipoPagamentoSpinner = (Spinner) findViewById(R.id.spTipoPagamento);
         ArrayAdapter<String> adapterTipoPagamento = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, tiposPagamentos);
         adapterTipoPagamento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tipoPagamentoSpinner.setAdapter(adapterTipoPagamento);
+        this.tipoPagamentoSpinner.setAdapter(adapterTipoPagamento);
 
-        tipoPrioridde = (Spinner) findViewById(R.id.spPrioridade);
+        this.tipoPrioridde = (Spinner) findViewById(R.id.spPrioridade);
         ArrayAdapter<String> adapterTipoPrioridade = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, tiposPrioridades);
         adapterTipoPrioridade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        tipoPrioridde.setAdapter(adapterTipoPrioridade);
-
-        btnSave = (Button) findViewById(R.id.save);
+        this.tipoPrioridde.setAdapter(adapterTipoPrioridade);
 
     }
 
@@ -93,8 +87,17 @@ public class GastosActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.saveGastos:
+                Toast.makeText(GastosActivity.this, "Salvar dados", Toast.LENGTH_LONG).show();
+                DespesaDB db = new DespesaDB(GastosActivity.this);
+                Despesa despesa = new Despesa();
 
-        return super.onOptionsItemSelected(item);
+                db.save(despesa);
+                return true;
+
+                default:
+                    return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -6,66 +6,86 @@
     android:layout_height="match_parent"
     android:stretchColumns="1">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        app:popupTheme="@style/AppTheme.PopupOverlay"  />
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
 
     <TableRow
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/labelDataCadastro"
-            android:text="Data Cadastro" />
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_date_range_brown_300_24dp" />
 
         <EditText
             android:id="@+id/txtDataCadastro"
             android:layout_marginRight="11dp"
+            android:hint="@string/dtCadastro"
+            android:layout_width="match_parent"
             android:inputType="date" />
     </TableRow>
 
     <TableRow>
-        <TextView
+        <ImageView
             android:id="@+id/labelNome"
-            android:layout_marginLeft="10dp"
-            android:text="Nome" />
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_description_brown_300_24dp" />
 
         <EditText
             android:id="@+id/txtNome"
             android:layout_marginRight="10dp"
+            android:hint="@string/hintNome"
             android:layout_width="match_parent" />
     </TableRow>
 
     <TableRow>
-        <TextView
+        <ImageView
             android:id="@+id/labelValor"
-            android:layout_marginLeft="10dp"
-            android:text="Valor" />
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ic_attach_money_brown_300_24dp" />
 
         <EditText
+            android:hint="@string/valor"
             android:layout_marginRight="10dp"
             android:id="@+id/txtValor" />
     </TableRow>
 
     <TableRow>
-        <TextView
+        <ImageView
             android:id="@+id/labelMotivo"
-            android:layout_marginLeft="10dp"
-            android:text="Motivo" />
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ic_chrome_reader_mode_brown_300_24dp" />
 
         <EditText
+            android:hint="@string/motivo"
             android:layout_marginRight="10dp"
             android:id="@+id/txtMotivo" />
     </TableRow>
 
     <TableRow>
-        <TextView
+        <ImageView
             android:id="@+id/labelPrioridade"
-            android:layout_marginLeft="10dp"
-            android:text="Prioridade" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ic_low_priority_brown_400_24dp" />
 
         <Spinner
             android:layout_marginRight="10dp"
@@ -73,10 +93,11 @@
     </TableRow>
 
     <TableRow>
-        <TextView
-            android:layout_marginLeft="10dp"
+        <ImageView
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/labelTipo"
-            android:text="Tipo" />
+            android:src="@drawable/ic_view_day_brown_300_24dp" />
 
         <Spinner
             android:layout_marginRight="10dp"
@@ -84,10 +105,11 @@
     </TableRow>
 
     <TableRow>
-        <TextView
+        <ImageView
             android:id="@+id/labelTipoPagamento"
-            android:layout_marginLeft="10dp"
-            android:text="Tipo Pagamento" />
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/ic_monetization_on_brown_300_24dp" />
 
         <Spinner
             android:layout_marginRight="10dp"
