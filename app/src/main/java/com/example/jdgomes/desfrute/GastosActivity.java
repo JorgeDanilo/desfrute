@@ -5,14 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.jdgomes.desfrute.domain.Despesa;
-import com.example.jdgomes.desfrute.domain.DespesaDB;
+import com.example.jdgomes.desfrute.db.DespesaDB;
 
 public class GastosActivity extends AppCompatActivity {
 
@@ -92,7 +91,6 @@ public class GastosActivity extends AppCompatActivity {
                 Toast.makeText(GastosActivity.this, "Salvar dados", Toast.LENGTH_LONG).show();
                 DespesaDB db = new DespesaDB(GastosActivity.this);
                 Despesa despesa = new Despesa();
-
                 db.save(despesa);
                 return true;
 

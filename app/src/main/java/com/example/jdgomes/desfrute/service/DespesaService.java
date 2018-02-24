@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.example.jdgomes.desfrute.domain.Despesa;
-import com.example.jdgomes.desfrute.domain.DespesaDB;
+import com.example.jdgomes.desfrute.db.DespesaDB;
 
 import java.util.List;
 
