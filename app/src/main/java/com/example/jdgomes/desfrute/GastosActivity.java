@@ -3,10 +3,13 @@ package com.example.jdgomes.desfrute;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -23,6 +26,9 @@ public class GastosActivity extends AppCompatActivity {
     private Spinner tipoPagamentoSpinner;
     private Spinner tipoPrioridde;
     private Button btnSave;
+    private EditText txtNome;
+    private EditText txtMotivo;
+    private EditText txtValor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +62,15 @@ public class GastosActivity extends AppCompatActivity {
         adapterTipoPrioridade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         this.tipoPrioridde.setAdapter(adapterTipoPrioridade);
 
+        this.txtNome = (EditText) findViewById(R.id.txtNome);
+        this.txtMotivo = (EditText) findViewById(R.id.txtMotivo);
+        this.txtValor = (EditText) findViewById(R.id.txtValor);
+
     }
 
+    /**
+     * Load array data.
+     */
     private void loadData() {
         tiposDeGastos = new String[] {
                 "Trabalho",
@@ -88,10 +101,28 @@ public class GastosActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.saveGastos:
-                Toast.makeText(GastosActivity.this, "Salvar dados", Toast.LENGTH_LONG).show();
+                Toast.makeText(GastosActivity.this, "Salvando dados", Toast.LENGTH_LONG).show();
                 DespesaDB db = new DespesaDB(GastosActivity.this);
                 Despesa despesa = new Despesa();
-                db.save(despesa);
+
+
+                String nome = this.txtNome.getText().toString();
+                String motivo = this.txtMotivo.getText().toString();
+                String valor = this.txtValor.getText().toString();
+
+                String tipoGastoSelected = this.tipoGasto.getSelectedItem().toString();
+                String tipoPagamentoSelected = this.tipoPagamentoSpinner.getSelectedItem().toString();
+                String tipoPrioriddeSelected = this.tipoPrioridde.getSelectedItem().toString();
+
+                despesa.nome = nome;
+                despesa.valor = Double.parseDouble(valor);
+                despesa.motivo = motivo;
+                despesa.tipo = tipoGastoSelected;
+                despesa.tipoPagamento = tipoPagamentoSelected;
+                despesa.prioridade = tipoPrioriddeSelected;
+
+                long idSaved = db.save(despesa);
+                Log.i("Id Saved => ", String.valueOf(idSaved));
                 return true;
 
                 default:
