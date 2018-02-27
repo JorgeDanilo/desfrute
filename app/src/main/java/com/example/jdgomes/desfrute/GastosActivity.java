@@ -117,9 +117,9 @@ public class GastosActivity extends AppCompatActivity {
                 despesa.nome = nome;
                 despesa.valor = Double.parseDouble(valor);
                 despesa.motivo = motivo;
+                despesa.prioridade = tipoPrioriddeSelected;
                 despesa.tipo = tipoGastoSelected;
                 despesa.tipoPagamento = tipoPagamentoSelected;
-                despesa.prioridade = tipoPrioriddeSelected;
 
                 long idSaved = db.save(despesa);
                 Log.i("Id Saved => ", String.valueOf(idSaved));

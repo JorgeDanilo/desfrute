@@ -16,7 +16,7 @@ public class DespesaDB extends SQLiteOpenHelper {
 
     public static final String NOME_BANCO = "desfrute.sqlite";
     private static final String TAG = "sql";
-    private static final int VERSAO_BANCO = 1;
+    private static final int VERSAO_BANCO = 2;
 
     public DespesaDB(Context context) {
         super(context, NOME_BANCO, null , VERSAO_BANCO);
@@ -24,14 +24,15 @@ public class DespesaDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         Log.d(TAG, "Criando a Tabela despesa...");
-        String criaTableDespesa = "create table if not exists despesa " +
+        String criaTableDespesa = "create table despesa " +
                 "(_id integer primary key autoincrement," +
-                "nome text" +
-                "valor double" +
-                "motivo text" +
-                "prioridade text" +
-                "tipo text" +
+                "nome text," +
+                "valor double," +
+                "motivo text," +
+                "prioridade text," +
+                "tipoDespesa text," +
                 "tipoPagamento text" +
                 ");";
         db.execSQL(criaTableDespesa);
@@ -40,7 +41,10 @@ public class DespesaDB extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        String dropTable = "DROP TABLE IF EXISTS despesa";
+        db.execSQL(dropTable);
+        Log.d(TAG, "Table deleted");
+        onCreate(db);
     }
 
     /**
@@ -57,7 +61,7 @@ public class DespesaDB extends SQLiteOpenHelper {
             values.put("valor", despesa.valor);
             values.put("motivo", despesa.motivo);
             values.put("prioridade", despesa.prioridade);
-            values.put("tipo", despesa.tipo);
+            values.put("tipoDespesa", despesa.tipo);
             values.put("tipoPagamento", despesa.tipoPagamento);
             if(id != 0) {
                 String _id = String.valueOf(despesa.id);
@@ -94,7 +98,7 @@ public class DespesaDB extends SQLiteOpenHelper {
                 despesa.valor = c.getDouble(c.getColumnIndex("valor"));
                 despesa.motivo = c.getString(c.getColumnIndex("motivo"));
                 despesa.prioridade = c.getString(c.getColumnIndex("prioridade"));
-                despesa.tipo = c.getString(c.getColumnIndex("tipo"));
+                despesa.tipo = c.getString(c.getColumnIndex("tipoDespesa"));
                 despesa.tipoPagamento = c.getString(c.getColumnIndex("tipoPagamento"));
             } while (c.moveToNext());
         }
