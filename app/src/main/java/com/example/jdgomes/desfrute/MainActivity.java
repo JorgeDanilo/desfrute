@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.jdgomes.desfrute.adapter.AdapterGastos;
 import com.example.jdgomes.desfrute.db.DespesaDB;
 import com.example.jdgomes.desfrute.domain.Despesa;
 
@@ -32,10 +33,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Despesas All ", despesas.toString());
 
         ListView listaGastos = (ListView) findViewById(R.id.list);
+        AdapterGastos adapterGastos = new AdapterGastos(despesas, this);
+        listaGastos.setAdapter(adapterGastos);
 
-        ArrayAdapter<Despesa> adapter = new ArrayAdapter<Despesa>(this, android.R.layout.simple_list_item_1, despesas);
-
-        listaGastos.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btnAddGastos);
         fab.setOnClickListener(new View.OnClickListener() {

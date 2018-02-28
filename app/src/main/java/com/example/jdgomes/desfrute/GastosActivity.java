@@ -1,5 +1,6 @@
 package com.example.jdgomes.desfrute;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -123,6 +124,10 @@ public class GastosActivity extends AppCompatActivity {
 
                 long idSaved = db.save(despesa);
                 Log.i("Id Saved => ", String.valueOf(idSaved));
+
+                Intent intent = new Intent(GastosActivity.this, MainActivity.class);
+                startActivity(intent);
+
                 return true;
 
                 default:
