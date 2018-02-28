@@ -16,7 +16,7 @@ public class DespesaDB extends SQLiteOpenHelper {
 
     public static final String NOME_BANCO = "desfrute.sqlite";
     private static final String TAG = "sql";
-    private static final int VERSAO_BANCO = 2;
+    private static final int VERSAO_BANCO = 3;
 
     public DespesaDB(Context context) {
         super(context, NOME_BANCO, null , VERSAO_BANCO);

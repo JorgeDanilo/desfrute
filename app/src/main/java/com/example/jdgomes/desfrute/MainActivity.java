@@ -6,9 +6,17 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.example.jdgomes.desfrute.db.DespesaDB;
+import com.example.jdgomes.desfrute.domain.Despesa;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        DespesaDB db = new DespesaDB(this);
+        List<Despesa> despesas = db.findAll();
+        Log.d("Despesas All ", despesas.toString());
+
+        ListView listaGastos = (ListView) findViewById(R.id.list);
+
+        ArrayAdapter<Despesa> adapter = new ArrayAdapter<Despesa>(this, android.R.layout.simple_list_item_1, despesas);
+
+        listaGastos.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btnAddGastos);
         fab.setOnClickListener(new View.OnClickListener() {

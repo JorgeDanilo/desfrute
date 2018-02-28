@@ -75,6 +75,8 @@ public class Despesa implements Parcelable {
 
     @Override
     public String toString() {
-        return "Despesa {" + "nome='" + nome + '\'' + '}';
+        return
+                "Despesa: " + nome + "\n" +
+                "Valor Despesa: " + valor;
     }
 }
