@@ -105,4 +105,20 @@ public class DespesaDB extends SQLiteOpenHelper {
         return despesas;
     }
 
+    /**
+     * Deleta despesa.
+     * @param despesa
+     * @return
+     */
+    public int delete(Despesa despesa) {
+        SQLiteDatabase db = getWritableDatabase();
+        try {
+            int count = db.delete("despesa", "_id=?", new String[]{String.valueOf(despesa.id)});
+            Log.i(TAG, "Deletou [" + count + "] registro.");
+            return count;
+        } finally {
+            db.close();
+        }
+    }
+
 }

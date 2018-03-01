@@ -5,14 +5,18 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.jdgomes.desfrute.MainActivity;
 import com.example.jdgomes.desfrute.R;
+import com.example.jdgomes.desfrute.db.DespesaDB;
 import com.example.jdgomes.desfrute.domain.Despesa;
 
-import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.logging.Handler;
 
 public class AdapterGastos extends BaseAdapter {
 
@@ -40,18 +44,37 @@ public class AdapterGastos extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = act.getLayoutInflater().inflate(R.layout.lista_despesas, parent, false);
-        Despesa despesa = despesas.get(position);
-        TextView nomeDespesa = view.findViewById(R.id.coluna_nome);;
+        final DespesaDB db = new DespesaDB(act);
+        final Despesa despesa = despesas.get(position);
+        TextView nomeDespesa = view.findViewById(R.id.coluna_nome);
         TextView motivoDespesa = view.findViewById(R.id.coluna_motivo);
         TextView valorDespesa = view.findViewById(R.id.coluna_valor);
         TextView prioridadeDespesa = view.findViewById(R.id.coluna_prioridade);
+        Button btnDeleteDespesa = view.findViewById(R.id.btnDeletaDespesa);
 
         nomeDespesa.setText(despesa.nome);
         motivoDespesa.setText(despesa.motivo);
         valorDespesa.setText(String.valueOf(despesa.valor));
         prioridadeDespesa.setText(despesa.prioridade);
+
+        // Deleta Despesa
+        btnDeleteDespesa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                act.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        db.delete(despesa);
+                        despesas.remove(position);
+                        Toast.makeText(act, "Despesa " + despesa.nome +" Excluída com Sucesso", Toast.LENGTH_SHORT).show();
+                        notifyDataSetChanged();
+                    }
+                });
+
+            }
+        });
 
         return view;
     }

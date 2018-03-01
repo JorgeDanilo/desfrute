@@ -3,14 +3,10 @@ package com.example.jdgomes.desfrute;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.jdgomes.desfrute.adapter.AdapterGastos;
@@ -28,13 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DespesaDB db = new DespesaDB(this);
-        List<Despesa> despesas = db.findAll();
-        Log.d("Despesas All ", despesas.toString());
-
-        ListView listaGastos = (ListView) findViewById(R.id.list);
-        AdapterGastos adapterGastos = new AdapterGastos(despesas, this);
-        listaGastos.setAdapter(adapterGastos);
+        carregaListaGastos();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btnAddGastos);
@@ -45,5 +35,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    /**
+     * Responsável por carregar a lista de gastos
+     */
+    public void carregaListaGastos() {
+        DespesaDB db = new DespesaDB(this);
+        List<Despesa> despesas = db.findAll();
+        Log.d("Despesas All ", despesas.toString());
+
+        ListView listaGastos = (ListView) findViewById(R.id.list);
+        AdapterGastos adapterGastos = new AdapterGastos(despesas, this);
+        listaGastos.setAdapter(adapterGastos);
     }
 }
