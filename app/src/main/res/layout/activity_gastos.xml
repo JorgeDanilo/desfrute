@@ -22,7 +22,7 @@
 
 
 
-    <TableRow
+    <!--<TableRow
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp">
 
@@ -39,9 +39,11 @@
             android:layout_width="match_parent"
             android:backgroundTint="@color/gray"
             android:inputType="date" />
-    </TableRow>
+    </TableRow>-->
 
-    <TableRow>
+    <TableRow
+        android:layout_marginTop="15dp">
+
         <ImageView
             android:id="@+id/labelNome"
             android:layout_marginRight="30dp"
@@ -52,6 +54,7 @@
             android:id="@+id/txtNome"
             android:layout_marginRight="10dp"
             android:hint="@string/hintNome"
+            android:backgroundTint="@color/gray"
             android:layout_width="match_parent" />
     </TableRow>
 
@@ -64,7 +67,9 @@
 
         <EditText
             android:hint="@string/valor"
+            android:inputType="numberDecimal"
             android:layout_marginRight="10dp"
+            android:backgroundTint="@color/gray"
             android:id="@+id/txtValor" />
     </TableRow>
 
@@ -73,11 +78,13 @@
             android:id="@+id/labelMotivo"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
+            android:backgroundTint="@color/gray"
             android:src="@drawable/ic_chrome_reader_mode_brown_300_24dp" />
 
         <EditText
             android:hint="@string/motivo"
             android:layout_marginRight="10dp"
+            android:backgroundTint="@color/gray"
             android:id="@+id/txtMotivo" />
     </TableRow>
 
@@ -89,18 +96,21 @@
             android:src="@drawable/ic_low_priority_brown_400_24dp" />
 
         <Spinner
+            android:backgroundTint="@color/gray"
             android:layout_marginRight="10dp"
             android:id="@+id/spPrioridade" />
     </TableRow>
 
     <TableRow>
         <ImageView
+
             android:layout_marginRight="30dp"
             android:layout_marginTop="10dp"
             android:id="@+id/labelTipo"
             android:src="@drawable/ic_view_day_brown_300_24dp" />
 
         <Spinner
+            android:backgroundTint="@color/gray"
             android:layout_marginRight="10dp"
             android:id="@+id/spTipo" />
     </TableRow>
@@ -114,6 +124,7 @@
 
         <Spinner
             android:layout_marginRight="10dp"
+            android:backgroundTint="@color/gray"
             android:id="@+id/spTipoPagamento" />
     </TableRow>
 
