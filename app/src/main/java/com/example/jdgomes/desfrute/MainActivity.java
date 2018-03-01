@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.jdgomes.desfrute.adapter.AdapterGastos;
 import com.example.jdgomes.desfrute.db.DespesaDB;
@@ -17,6 +19,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    ListView listaGastos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         carregaListaGastos();
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btnAddGastos);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,8 +48,15 @@ public class MainActivity extends AppCompatActivity {
         List<Despesa> despesas = db.findAll();
         Log.d("Despesas All ", despesas.toString());
 
-        ListView listaGastos = (ListView) findViewById(R.id.list);
+        this.listaGastos = (ListView) findViewById(R.id.list);
         AdapterGastos adapterGastos = new AdapterGastos(despesas, this);
-        listaGastos.setAdapter(adapterGastos);
+        this.listaGastos.setAdapter(adapterGastos);
+    }
+
+    /**
+     * Responsável por detalhar
+     */
+    public void detalhar() {
+
     }
 }
