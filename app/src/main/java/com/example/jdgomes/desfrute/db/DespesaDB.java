@@ -77,6 +77,10 @@ public class DespesaDB extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * find all despesas
+     * @return
+     */
     public List<Despesa> findAll() {
         SQLiteDatabase db = getWritableDatabase();
         try{
@@ -87,6 +91,11 @@ public class DespesaDB extends SQLiteOpenHelper {
         }
     }
 
+    /**
+     * convert to list.
+     * @param c
+     * @return
+     */
     private List<Despesa> toList(Cursor c) {
         List<Despesa> despesas = new ArrayList<Despesa>();
         if (c.moveToFirst()) {
@@ -103,6 +112,22 @@ public class DespesaDB extends SQLiteOpenHelper {
             } while (c.moveToNext());
         }
         return despesas;
+    }
+
+    /**
+     * Find despesas by id.
+     * @param id
+     * @return
+     */
+    private Despesa findById(Long id) {
+        SQLiteDatabase db = getWritableDatabase();
+        try {
+            Cursor c = db.query("despesa", null, "_id=?", new String[]{String.valueOf(id)}, null, null, null);
+            List<Despesa> despesas = toList(c);
+            return despesas.isEmpty() ? null : despesas.get(0);
+        } finally {
+            db.close();
+        }
     }
 
     /**
