@@ -5,6 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.Date;
+import java.util.List;
 
 public class Despesa implements Parcelable {
 
@@ -18,8 +19,8 @@ public class Despesa implements Parcelable {
     private String prioridade;
     private String tipo;
     private String tipoPagamento;
+    private List<ItensDespesa> itensDespesas;
 
-    // Flag para indicar que a despesa está selecionado.
     private boolean selected;
 
 
@@ -84,9 +85,6 @@ public class Despesa implements Parcelable {
               "Tipo Pagamento Despesa: " + tipoPagamento;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
 
     public long getId() {
         return id;
