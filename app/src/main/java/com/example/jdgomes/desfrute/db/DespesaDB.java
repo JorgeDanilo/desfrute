@@ -53,18 +53,18 @@ public class DespesaDB extends SQLiteOpenHelper {
      * @return
      */
     public long save(Despesa despesa) {
-        long id = despesa.id;
+        long id = despesa.getId();
         SQLiteDatabase db = getWritableDatabase();
         try {
             ContentValues values = new ContentValues();
-            values.put("nome", despesa.nome);
-            values.put("valor", despesa.valor);
-            values.put("motivo", despesa.motivo);
-            values.put("prioridade", despesa.prioridade);
-            values.put("tipoDespesa", despesa.tipo);
-            values.put("tipoPagamento", despesa.tipoPagamento);
+            values.put("nome", despesa.getNome());
+            values.put("valor", despesa.getValor());
+            values.put("motivo", despesa.getMotivo());
+            values.put("prioridade", despesa.getPrioridade());
+            values.put("tipoDespesa", despesa.getTipo());
+            values.put("tipoPagamento", despesa.getTipoPagamento());
             if(id != 0) {
-                String _id = String.valueOf(despesa.id);
+                String _id = String.valueOf(despesa.getId());
                 String[] whereArgs = {_id};
                 int count = db.update("despesa", values, "_id=?", whereArgs);
                 return count;
@@ -102,13 +102,13 @@ public class DespesaDB extends SQLiteOpenHelper {
             do {
                 Despesa despesa = new Despesa();
                 despesas.add(despesa);
-                despesa.id = c.getLong(c.getColumnIndex("_id"));
-                despesa.nome = c.getString(c.getColumnIndex("nome"));
-                despesa.valor = c.getDouble(c.getColumnIndex("valor"));
-                despesa.motivo = c.getString(c.getColumnIndex("motivo"));
-                despesa.prioridade = c.getString(c.getColumnIndex("prioridade"));
-                despesa.tipo = c.getString(c.getColumnIndex("tipoDespesa"));
-                despesa.tipoPagamento = c.getString(c.getColumnIndex("tipoPagamento"));
+                despesa.setId(c.getLong(c.getColumnIndex("_id")));
+                despesa.setNome(c.getString(c.getColumnIndex("nome")));
+                despesa.setValor(c.getDouble(c.getColumnIndex("valor")));
+                despesa.setMotivo(c.getString(c.getColumnIndex("motivo")));
+                despesa.setPrioridade(c.getString(c.getColumnIndex("prioridade")));
+                despesa.setTipo(c.getString(c.getColumnIndex("tipoDespesa")));
+                despesa.setTipoPagamento(c.getString(c.getColumnIndex("tipoPagamento")));
             } while (c.moveToNext());
         }
         return despesas;
@@ -138,7 +138,7 @@ public class DespesaDB extends SQLiteOpenHelper {
     public int delete(Despesa despesa) {
         SQLiteDatabase db = getWritableDatabase();
         try {
-            int count = db.delete("despesa", "_id=?", new String[]{String.valueOf(despesa.id)});
+            int count = db.delete("despesa", "_id=?", new String[]{String.valueOf(despesa.getId())});
             Log.i(TAG, "Deletou [" + count + "] registro.");
             return count;
         } finally {

@@ -10,17 +10,17 @@ public class Despesa implements Parcelable {
 
     private static final long serialVersionUID = 1L;
 
-    public long id;
-    public Date dataCadastro;
-    public String nome;
-    public Double valor;
-    public String motivo;
-    public String prioridade;
-    public String tipo;
-    public String tipoPagamento;
+    private long id;
+    private Date dataCadastro;
+    private String nome;
+    private Double valor;
+    private String motivo;
+    private String prioridade;
+    private String tipo;
+    private String tipoPagamento;
 
     // Flag para indicar que a despesa está selecionado.
-    public boolean selected;
+    private boolean selected;
 
 
 
@@ -78,5 +78,85 @@ public class Despesa implements Parcelable {
         return
                 "Despesa: " + nome + "\n" +
                 "Valor Despesa: " + valor;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(String prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getTipoPagamento() {
+        return tipoPagamento;
+    }
+
+    public void setTipoPagamento(String tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
+    }
+
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+
+    public static Creator<Despesa> getCREATOR() {
+        return CREATOR;
     }
 }

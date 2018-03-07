@@ -54,10 +54,10 @@ public class AdapterGastos extends BaseAdapter {
         TextView prioridadeDespesa = view.findViewById(R.id.coluna_prioridade);
         Button btnDeleteDespesa = view.findViewById(R.id.btnDeletaDespesa);
 
-        nomeDespesa.setText(despesa.nome);
-        motivoDespesa.setText(despesa.motivo);
-        valorDespesa.setText(String.valueOf(despesa.valor));
-        prioridadeDespesa.setText(despesa.prioridade);
+        nomeDespesa.setText(despesa.getNome());
+        motivoDespesa.setText(despesa.getMotivo());
+        valorDespesa.setText(String.valueOf(despesa.getValor()));
+        prioridadeDespesa.setText(despesa.getPrioridade());
 
         // Deleta Despesa
         btnDeleteDespesa.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +68,7 @@ public class AdapterGastos extends BaseAdapter {
                     public void run() {
                         db.delete(despesa);
                         despesas.remove(position);
-                        Toast.makeText(act, "Despesa " + despesa.nome +" Excluída com Sucesso", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(act, "Despesa " + despesa.getNome() +" Excluída com Sucesso", Toast.LENGTH_SHORT).show();
                         notifyDataSetChanged();
                     }
                 });

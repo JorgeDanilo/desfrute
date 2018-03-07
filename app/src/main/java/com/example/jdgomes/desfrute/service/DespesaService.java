@@ -21,7 +21,7 @@ public class DespesaService {
         DespesaDB db = new DespesaDB(context);
         try {
             for (Despesa d: despesas) {
-                Log.d(TAG, "Salvando a despesa " + d.nome);
+                Log.d(TAG, "Salvando a despesa " + d.getNome());
                 db.save(d);
             }
         } finally {
