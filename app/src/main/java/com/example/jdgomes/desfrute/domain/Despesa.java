@@ -76,8 +76,12 @@ public class Despesa implements Parcelable {
     @Override
     public String toString() {
         return
-                "Despesa: " + nome + "\n" +
-                "Valor Despesa: " + valor;
+              "Nome Despesa: " + nome + "\n" +
+              "Valor Despesa: " + valor + "\n" +
+              "Motivo Despesa: " + motivo + "\n" +
+              "Prioridade Despesa: " + prioridade + "\n" +
+              "Tipo Despesa: " + tipo + "\n" +
+              "Tipo Pagamento Despesa: " + tipoPagamento;
     }
 
     public static long getSerialVersionUID() {

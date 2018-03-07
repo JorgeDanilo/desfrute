@@ -119,7 +119,7 @@ public class DespesaDB extends SQLiteOpenHelper {
      * @param id
      * @return
      */
-    private Despesa findById(Long id) {
+    public Despesa findById(Long id) {
         SQLiteDatabase db = getWritableDatabase();
         try {
             Cursor c = db.query("despesa", null, "_id=?", new String[]{String.valueOf(id)}, null, null, null);

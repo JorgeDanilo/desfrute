@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.jdgomes.desfrute.MainActivity;
+import com.example.jdgomes.desfrute.activity.MainActivity;
 import com.example.jdgomes.desfrute.R;
 import com.example.jdgomes.desfrute.db.DespesaDB;
 import com.example.jdgomes.desfrute.domain.Despesa;
@@ -22,11 +22,18 @@ import com.example.jdgomes.desfrute.formulario.GastosFormulario;
 public class GastosFragment extends BaseFragment {
 
     GastosFormulario gastosFormulario = new GastosFormulario();
+    private Despesa despesaSelected;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gastos, container, false);
+
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            Log.d("DESPESA_SELECIONADA", bundle.getParcelable("despesa").toString());
+        }
+
 
         this.loadComponents(view);
         return view;

@@ -2,6 +2,7 @@ package com.example.jdgomes.desfrute.adapter;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,14 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jdgomes.desfrute.MainActivity;
 import com.example.jdgomes.desfrute.R;
+import com.example.jdgomes.desfrute.activity.GastosActivity;
 import com.example.jdgomes.desfrute.db.DespesaDB;
 import com.example.jdgomes.desfrute.domain.Despesa;
 
 
 import java.util.List;
-import java.util.logging.Handler;
 
 public class AdapterGastos extends BaseAdapter {
 
@@ -53,6 +53,7 @@ public class AdapterGastos extends BaseAdapter {
         TextView valorDespesa = view.findViewById(R.id.coluna_valor);
         TextView prioridadeDespesa = view.findViewById(R.id.coluna_prioridade);
         Button btnDeleteDespesa = view.findViewById(R.id.btnDeletaDespesa);
+        Button btnDetalharDespesa = view.findViewById(R.id.btnDetalharDespesa);
 
         nomeDespesa.setText(despesa.getNome());
         motivoDespesa.setText(despesa.getMotivo());
@@ -73,6 +74,19 @@ public class AdapterGastos extends BaseAdapter {
                     }
                 });
 
+            }
+        });
+
+
+        //TODO: criar uma view conforme documentação.
+        // detalhar despesa
+        btnDetalharDespesa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Despesa despesaSaved = db.findById(despesa.getId());
+                Intent intent = new Intent(act, GastosActivity.class);
+                intent.putExtra("despesa", despesaSaved);
+                act.startActivity(intent);
             }
         });
 

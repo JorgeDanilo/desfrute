@@ -1,4 +1,4 @@
-package com.example.jdgomes.desfrute;
+package com.example.jdgomes.desfrute.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.jdgomes.desfrute.R;
 import com.example.jdgomes.desfrute.adapter.AdapterGastos;
 import com.example.jdgomes.desfrute.db.DespesaDB;
 import com.example.jdgomes.desfrute.domain.Despesa;
