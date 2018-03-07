@@ -2,6 +2,8 @@ package com.example.jdgomes.desfrute;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.jdgomes.desfrute.domain.Despesa;
 import com.example.jdgomes.desfrute.db.DespesaDB;
+import com.example.jdgomes.desfrute.fragment.GastosFragment;
 
 public class GastosActivity extends AppCompatActivity {
 
@@ -35,11 +38,16 @@ public class GastosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gastos);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        this.loadData();
-        this.loadComponents();
+        FragmentManager fm = getSupportFragmentManager();
+
+        if ( savedInstanceState == null ) {
+            FragmentTransaction ft = fm.beginTransaction();
+            GastosFragment frag1 = new GastosFragment();
+            ft.add(R.id.layoutFrag, frag1, "Fragment 1");
+            ft.commit();
+        }
+
 
     }
 

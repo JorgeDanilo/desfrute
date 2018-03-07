@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.jdgomes.desfrute.adapter.AdapterGastos;
 import com.example.jdgomes.desfrute.db.DespesaDB;
 import com.example.jdgomes.desfrute.domain.Despesa;
+import com.example.jdgomes.desfrute.fragment.GastosFragment;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listaGastos;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
