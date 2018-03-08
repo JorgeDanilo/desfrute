@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 
 import com.example.jdgomes.desfrute.R;
@@ -24,6 +25,7 @@ public class GastosActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Bundle extras = getIntent().getExtras();
+
         if ( extras != null ) {
             this.despesaSelected = extras.getParcelable("despesa");
         }
@@ -34,8 +36,11 @@ public class GastosActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             GastosFragment frag1 = new GastosFragment();
             Bundle b = new Bundle();
-            b.putParcelable("despesa", despesaSelected);
-            frag1.setArguments(b);
+            if ( despesaSelected != null ) {
+                b.putParcelable("despesa", despesaSelected);
+                frag1.setArguments(b);
+            }
+
             ft.add(R.id.layoutFrag, frag1, "Fragment 1");
             ft.commit();
         }

@@ -30,6 +30,7 @@ public class GastosFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_gastos, container, false);
 
         Bundle bundle = this.getArguments();
+
         if (bundle != null) {
             Log.d("DESPESA_SELECIONADA", bundle.getParcelable("despesa").toString());
         }
