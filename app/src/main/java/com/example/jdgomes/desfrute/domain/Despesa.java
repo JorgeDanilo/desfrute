@@ -157,8 +157,4 @@ public class Despesa implements Parcelable {
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
-
-    public static Creator<Despesa> getCREATOR() {
-        return CREATOR;
-    }
 }

@@ -16,7 +16,7 @@ class ItensDespesa implements Parcelable  {
     private String descricao;
     private double valor;
     private Date dataVencimento;
-    private String EnumSituacaoDespesa;
+    private String situacaoDespesa;
 
     private static final Creator<ItensDespesa> CREATOR = new Creator<ItensDespesa>() {
         @Override
@@ -43,7 +43,7 @@ class ItensDespesa implements Parcelable  {
         dest.writeString(nome);
         dest.writeString(descricao);
         dest.writeDouble(valor);
-        dest.writeString(EnumSituacaoDespesa);
+        dest.writeString(situacaoDespesa);
     }
 
     /**
@@ -55,7 +55,7 @@ class ItensDespesa implements Parcelable  {
        this.nome = parcel.readString();
        this.descricao = parcel.readString();
        this.valor = parcel.readDouble();
-       this.EnumSituacaoDespesa = parcel.readString();
+       this.situacaoDespesa = parcel.readString();
     }
 
     public long getId() {
@@ -106,13 +106,12 @@ class ItensDespesa implements Parcelable  {
         this.dataVencimento = dataVencimento;
     }
 
-    public String getEnumSituacaoDespesa() {
-        return EnumSituacaoDespesa;
+
+    public String getSituacaoDespesa() {
+        return situacaoDespesa;
     }
 
-    public void setEnumSituacaoDespesa(String enumSituacaoDespesa) {
-        EnumSituacaoDespesa = enumSituacaoDespesa;
+    public void setSituacaoDespesa(String situacaoDespesa) {
+        this.situacaoDespesa = situacaoDespesa;
     }
-
-
 }
