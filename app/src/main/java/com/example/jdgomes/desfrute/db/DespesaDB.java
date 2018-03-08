@@ -35,7 +35,20 @@ public class DespesaDB extends SQLiteOpenHelper {
                 "tipoDespesa text," +
                 "tipoPagamento text" +
                 ");";
+
+        String criaTableItensDespesa = "create table itens_despesa " +
+                "(_id integer primary key autoincrement, " +
+                "nome text, " +
+                "descricao text, " +
+                "valor double, " +
+                "situacaoDespesa text" +
+                ");";
+
         db.execSQL(criaTableDespesa);
+
+        //TODO: executar o sql e alterar a estrutura da tabela despesa para gerar
+        // colocar a coluna estrangeira de itens da despesa.
+
         Log.d(TAG, "Tabela despesa criada com sucesso...");
     }
 

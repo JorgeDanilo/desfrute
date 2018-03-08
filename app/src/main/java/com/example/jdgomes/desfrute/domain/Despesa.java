@@ -150,6 +150,14 @@ public class Despesa implements Parcelable {
         this.tipoPagamento = tipoPagamento;
     }
 
+    public List<ItensDespesa> getItensDespesas() {
+        return itensDespesas;
+    }
+
+    public void setItensDespesas(List<ItensDespesa> itensDespesas) {
+        this.itensDespesas = itensDespesas;
+    }
+
     public boolean isSelected() {
         return selected;
     }
