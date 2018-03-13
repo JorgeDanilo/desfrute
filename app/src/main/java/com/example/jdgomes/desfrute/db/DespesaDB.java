@@ -12,53 +12,12 @@ import com.example.jdgomes.desfrute.domain.Despesa;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DespesaDB extends SQLiteOpenHelper {
+public class DespesaDB {
 
-    public static final String NOME_BANCO = "desfrute.sqlite";
-    private static final String TAG = "sql";
-    private static final int VERSAO_BANCO = 3;
+    private SQLiteDatabase db;
+    private CreateDataBase banco;
+    private static final String TAG = "DespesaDB";
 
-    public DespesaDB(Context context) {
-        super(context, NOME_BANCO, null , VERSAO_BANCO);
-    }
-
-    @Override
-    public void onCreate(SQLiteDatabase db) {
-
-        Log.d(TAG, "Criando a Tabela despesa...");
-        String criaTableDespesa = "create table despesa " +
-                "(_id integer primary key autoincrement," +
-                "nome text," +
-                "valor double," +
-                "motivo text," +
-                "prioridade text," +
-                "tipoDespesa text," +
-                "tipoPagamento text" +
-                ");";
-
-        String criaTableItensDespesa = "create table itens_despesa " +
-                "(_id integer primary key autoincrement, " +
-                "nome text, " +
-                "descricao text, " +
-                "valor double, " +
-                "situacaoDespesa text" +
-                ");";
-
-        db.execSQL(criaTableDespesa);
-
-        //TODO: executar o sql e alterar a estrutura da tabela despesa para gerar
-        // colocar a coluna estrangeira de itens da despesa.
-
-        Log.d(TAG, "Tabela despesa criada com sucesso...");
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String dropTable = "DROP TABLE IF EXISTS despesa";
-        db.execSQL(dropTable);
-        Log.d(TAG, "Table deleted");
-        onCreate(db);
-    }
 
     /**
      * Salva uma nova despesa, ou atualiza se já existir.
@@ -67,7 +26,7 @@ public class DespesaDB extends SQLiteOpenHelper {
      */
     public long save(Despesa despesa) {
         long id = despesa.getId();
-        SQLiteDatabase db = getWritableDatabase();
+        SQLiteDatabase db = banco.getWritableDatabase();
         try {
             ContentValues values = new ContentValues();
             values.put("nome", despesa.getNome());
@@ -95,7 +54,7 @@ public class DespesaDB extends SQLiteOpenHelper {
      * @return
      */
     public List<Despesa> findAll() {
-        SQLiteDatabase db = getWritableDatabase();
+        SQLiteDatabase db = banco.getWritableDatabase();
         try{
             Cursor c = db.query("despesa", null, null, null, null, null, null);
             return toList(c);
@@ -133,7 +92,7 @@ public class DespesaDB extends SQLiteOpenHelper {
      * @return
      */
     public Despesa findById(Long id) {
-        SQLiteDatabase db = getWritableDatabase();
+        SQLiteDatabase db = banco.getWritableDatabase();
         try {
             Cursor c = db.query("despesa", null, "_id=?", new String[]{String.valueOf(id)}, null, null, null);
             List<Despesa> despesas = toList(c);
@@ -149,7 +108,7 @@ public class DespesaDB extends SQLiteOpenHelper {
      * @return
      */
     public int delete(Despesa despesa) {
-        SQLiteDatabase db = getWritableDatabase();
+        SQLiteDatabase db = banco.getWritableDatabase();
         try {
             int count = db.delete("despesa", "_id=?", new String[]{String.valueOf(despesa.getId())});
             Log.i(TAG, "Deletou [" + count + "] registro.");
