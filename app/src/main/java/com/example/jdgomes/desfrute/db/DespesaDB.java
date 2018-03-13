@@ -18,6 +18,10 @@ public class DespesaDB {
     private CreateDataBase banco;
     private static final String TAG = "DespesaDB";
 
+    public DespesaDB(Context context) {
+        banco = new CreateDataBase(context);
+    }
+
 
     /**
      * Salva uma nova despesa, ou atualiza se já existir.
