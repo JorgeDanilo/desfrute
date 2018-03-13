@@ -41,6 +41,7 @@ class ItensDespesa implements Parcelable  {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
         dest.writeString(nome);
+        dest.writeSerializable(dataCadastro);
         dest.writeString(descricao);
         dest.writeDouble(valor);
         dest.writeString(situacaoDespesa);
@@ -53,6 +54,7 @@ class ItensDespesa implements Parcelable  {
     public void readFromParcel(Parcel parcel) {
        this.id = parcel.readLong();
        this.nome = parcel.readString();
+       this.dataCadastro = (Date) parcel.readSerializable();
        this.descricao = parcel.readString();
        this.valor = parcel.readDouble();
        this.situacaoDespesa = parcel.readString();
