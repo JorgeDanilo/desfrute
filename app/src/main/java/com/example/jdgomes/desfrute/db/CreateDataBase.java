@@ -18,39 +18,16 @@ public class CreateDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-        Log.d(TAG, "Criando a Tabela despesa...");
-        String criaTableDespesa = "create table despesa " +
-                "(_id integer primary key autoincrement," +
-                "nome text," +
-                "valor double," +
-                "motivo text," +
-                "prioridade text," +
-                "tipoDespesa text," +
-                "tipoPagamento text" +
-                ");";
-
-        String criaTableItensDespesa = "create table itens_despesa " +
-                "(_id integer primary key autoincrement, " +
-                "nome text, " +
-                "descricao text, " +
-                "valor double, " +
-                "situacaoDespesa text" +
-                ");";
-
-        db.execSQL(criaTableDespesa);
+        db.execSQL(ConstantesDB.createTableDespesa);
+        db.execSQL(ConstantesDB.createTableIntesDespesa);
 
         //TODO: executar o sql e alterar a estrutura da tabela despesa para gerar
         // colocar a coluna estrangeira de itens da despesa.
-
-        Log.d(TAG, "Tabela despesa criada com sucesso...");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String dropTable = "DROP TABLE IF EXISTS despesa";
-        db.execSQL(dropTable);
-        Log.d(TAG, "Table deleted");
+        db.execSQL(ConstantesDB.dropTableDespesa);
         onCreate(db);
     }
 }

@@ -1,6 +1,5 @@
 package com.example.jdgomes.desfrute.formulario;
 
-import android.app.Fragment;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
