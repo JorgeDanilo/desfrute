@@ -26,6 +26,10 @@
             android:name=".activity.GastosActivity"
             android:label="@string/title_activity_gastos"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ItensActivity"
+            android:label="@string/title_activity_itens"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
