@@ -1,11 +1,9 @@
 package com.example.jdgomes.desfrute.service;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.jdgomes.desfrute.db.CreateDataBase;
 import com.example.jdgomes.desfrute.domain.Despesa;
-import com.example.jdgomes.desfrute.db.DespesaDB;
 
 import java.util.List;
 
@@ -24,7 +22,17 @@ public class DespesaService {
      * @param context
      * @param despesas
      */
-    public static void salvarDespesa(Context context, List<Despesa> despesas) {
+    public static void salvarDespesas(Context context, List<Despesa> despesas) {
 
     }
+
+    public static void save(Context context, Despesa despesa) {
+
+    }
+
+    public static void delete(Context context, Despesa despesa) {
+
+    }
+
+
 }
