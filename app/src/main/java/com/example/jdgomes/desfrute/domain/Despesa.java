@@ -1,13 +1,15 @@
 package com.example.jdgomes.desfrute.domain;
 
 
-import android.os.Parcel;
 import android.os.Parcelable;
+
+import org.parceler.Parcel;
 
 import java.util.Date;
 import java.util.List;
 
-public class Despesa implements Parcelable {
+@Parcel(Parcel.Serialization.BEAN)
+public class Despesa {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,59 +22,7 @@ public class Despesa implements Parcelable {
     private String tipo;
     private String tipoPagamento;
     private List<ItensDespesa> itensDespesas;
-
-    private boolean selected;
-
-
-
-    public static final Creator<Despesa> CREATOR = new Creator<Despesa>() {
-        @Override
-        public Despesa createFromParcel(Parcel p) {
-            Despesa d = new Despesa();
-            d.readFromParcel(p);
-            return d;
-        }
-
-        @Override
-        public Despesa[] newArray(int size) {
-            return new Despesa[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    /**
-     * Serializa os dados.
-     * @param dest
-     * @param flags
-     */
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(id);
-        dest.writeString(nome);
-        dest.writeDouble(valor);
-        dest.writeString(motivo);
-        dest.writeString(prioridade);
-        dest.writeString(tipo);
-        dest.writeString(tipoPagamento);
-    }
-
-    /**
-     * Le os dados na mesma ordem que foram escritos.
-     * @param parcel
-     */
-    public void readFromParcel(Parcel parcel) {
-        this.id = parcel.readLong();
-        this.nome = parcel.readString();
-        this.valor = parcel.readDouble();
-        this.motivo = parcel.readString();
-        this.prioridade = parcel.readString();
-        this.tipo = parcel.readString();
-        this.tipoPagamento = parcel.readString();
-    }
+    private Parcelable selected;
 
     @Override
     public String toString() {
@@ -158,11 +108,11 @@ public class Despesa implements Parcelable {
         this.itensDespesas = itensDespesas;
     }
 
-    public boolean isSelected() {
+    public Parcelable getSelected() {
         return selected;
     }
 
-    public void setSelected(boolean selected) {
+    public void setSelected(Parcelable selected) {
         this.selected = selected;
     }
 }

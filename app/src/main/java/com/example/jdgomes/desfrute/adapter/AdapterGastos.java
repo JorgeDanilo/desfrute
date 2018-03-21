@@ -85,7 +85,6 @@ public class AdapterGastos extends BaseAdapter {
             public void onClick(View v) {
                 Despesa despesaSaved = db.findById(despesa.getId());
                 Intent intent = new Intent(act, GastosActivity.class);
-                intent.putExtra("despesa", despesaSaved);
                 act.startActivity(intent);
             }
         });

@@ -1,6 +1,7 @@
 package com.example.jdgomes.desfrute.activity;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +15,7 @@ import com.example.jdgomes.desfrute.fragment.GastosFragment;
 
 public class GastosActivity extends AppCompatActivity {
 
-    private Despesa despesaSelected = null;
+    private Parcelable despesaSelected = null;
 
 
     @Override
