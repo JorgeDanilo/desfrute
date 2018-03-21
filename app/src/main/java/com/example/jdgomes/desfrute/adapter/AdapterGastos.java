@@ -2,11 +2,15 @@ package com.example.jdgomes.desfrute.adapter;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,34 +64,72 @@ public class AdapterGastos extends BaseAdapter {
         valorDespesa.setText(String.valueOf(despesa.getValor()));
         prioridadeDespesa.setText(despesa.getPrioridade());
 
-        // Deleta Despesa
-        btnDeleteDespesa.setOnClickListener(new View.OnClickListener() {
+        view.setOnLongClickListener(new View.OnLongClickListener() {
+
             @Override
-            public void onClick(View v) {
-                act.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        db.delete(despesa);
-                        despesas.remove(position);
-                        Toast.makeText(act, "Despesa " + despesa.getNome() +" Excluída com Sucesso", Toast.LENGTH_SHORT).show();
-                        notifyDataSetChanged();
+            public boolean onLongClick(View v) {
+                Toast.makeText(act, "Clicked", Toast.LENGTH_SHORT).show();
+                AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).create();
+                alertDialog.setTitle("Reset...");
+                alertDialog.setMessage("Are you sure?");
+                alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // here you can add functions
                     }
                 });
-
+                alertDialog.setIcon(R.drawable.ic_credit_card_blue_200_48dp);
+                alertDialog.show();
+                return true;
             }
         });
 
-
-        //TODO: criar uma view conforme documentação.
-        // detalhar despesa
-        btnDetalharDespesa.setOnClickListener(new View.OnClickListener() {
+        // Click to item on list view.
+        view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Despesa despesaSaved = db.findById(despesa.getId());
-                Intent intent = new Intent(act, GastosActivity.class);
-                act.startActivity(intent);
+                //TODO: ir para o novo fragment de detalhes personlizado da despesa.
+                Despesa despesaFind = db.findById(despesa.getId());
+                AlertDialog alertDialog = new AlertDialog.Builder(v.getContext()).create();
+                alertDialog.setTitle("Despesa");
+                alertDialog.setMessage(despesaFind.toString());
+                alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // here you can add functions
+                    }
+                });
+                alertDialog.setIcon(R.drawable.ic_credit_card_blue_200_48dp);
+                alertDialog.show();
             }
         });
+
+//        // Deleta Despesa
+//        btnDeleteDespesa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                act.runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        db.delete(despesa);
+//                        despesas.remove(position);
+//                        Toast.makeText(act, "Despesa " + despesa.getNome() +" Excluída com Sucesso", Toast.LENGTH_SHORT).show();
+//                        notifyDataSetChanged();
+//                    }
+//                });
+//
+//            }
+//        });
+//
+//
+//        //TODO: criar uma view conforme documentação.
+//        // detalhar despesa
+//        btnDetalharDespesa.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Despesa despesaSaved = db.findById(despesa.getId());
+//                Intent intent = new Intent(act, GastosActivity.class);
+//                act.startActivity(intent);
+//            }
+//        });
 
         return view;
     }
