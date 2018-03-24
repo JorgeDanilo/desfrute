@@ -69,22 +69,49 @@ public class GastosFragment extends BaseFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.saveGastos:
-                DespesaDB db = new DespesaDB(getContext());
-                Despesa despesa = new Despesa();
-                despesa.setNome(this.gastosFormulario.getTxtNome().getText().toString());
-                despesa.setValor(Double.parseDouble(this.gastosFormulario.getTxtValor().getText().toString()));
-                despesa.setMotivo(this.gastosFormulario.getTxtMotivo().getText().toString());
-                despesa.setPrioridade(this.gastosFormulario.getTipoPrioridde().getSelectedItem().toString());
-                despesa.setTipo(this.gastosFormulario.getTipoGasto().getSelectedItem().toString());
-                despesa.setTipoPagamento(this.gastosFormulario.getTipoPagamentoSpinner().getSelectedItem().toString());
-                long idSaved = db.save(despesa);
-                Toast.makeText(getContext(), "Despesa salva com sucesso", Toast.LENGTH_SHORT).show();
-                Log.i("Id Saved => ", String.valueOf(idSaved));
-                Intent intent = new Intent(getContext(), MainActivity.class);
-                startActivity(intent);
-                return true;
+                if ( this.validateForm(this.gastosFormulario) ) {
+                    DespesaDB db = new DespesaDB(getContext());
+                    Despesa despesa = new Despesa();
+                    despesa.setNome(this.gastosFormulario.getTxtNome().getText().toString());
+                    despesa.setValor(Double.parseDouble(this.gastosFormulario.getTxtValor().getText().toString()));
+                    despesa.setMotivo(this.gastosFormulario.getTxtMotivo().getText().toString());
+                    despesa.setPrioridade(this.gastosFormulario.getTipoPrioridde().getSelectedItem().toString());
+                    despesa.setTipo(this.gastosFormulario.getTipoGasto().getSelectedItem().toString());
+                    despesa.setTipoPagamento(this.gastosFormulario.getTipoPagamentoSpinner().getSelectedItem().toString());
+                    long idSaved = db.save(despesa);
+                    Toast.makeText(getContext(), "Despesa salva com sucesso", Toast.LENGTH_SHORT).show();
+                    Log.i("Id Saved => ", String.valueOf(idSaved));
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                }
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    /**
+     * Checa se há campos vazios no formulario.
+     * @param formulario
+     * @return
+     */
+    private boolean validateForm(GastosFormulario formulario) {
+
+        if ( formulario.getTxtNome().getText().toString().equals("") ) {
+            showToast(this.getActivity(), "Campo Nome é obrigatório");
+            return false;
+        }
+
+        if ( formulario.getTxtValor().getText().toString().equals("") ) {
+            showToast(this.getActivity(), "Campo Valor é obrigatório");
+            return false;
+        }
+
+        if ( formulario.getTxtMotivo().getText().toString().equals("") ) {
+            showToast(this.getActivity(), "Campo Motivo é obrigatório");
+            return false;
+        }
+
+        return true;
     }
 }
