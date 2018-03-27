@@ -1,5 +1,7 @@
 package com.example.jdgomes.desfrute.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jdgomes.desfrute.activity.MainActivity;
@@ -61,6 +65,11 @@ public class GastosFragment extends BaseFragment {
         this.gastosFormulario.setTxtNome((EditText) view.findViewById(R.id.txtNome));
         this.gastosFormulario.setTxtMotivo((EditText) view.findViewById(R.id.txtMotivo));
         this.gastosFormulario.setTxtValor((EditText) view.findViewById(R.id.txtValor));
+
+
+        this.gastosFormulario.setItensDespesa((Spinner) view.findViewById(R.id.spItensDespesa));
+        ArrayAdapter<String> adapterItensDespesas = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, this.gastosFormulario.getItensDespesaMock());
+        this.gastosFormulario.getItensDespesa().setAdapter(adapterItensDespesas);
 
     }
 

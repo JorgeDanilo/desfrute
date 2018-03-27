@@ -2,6 +2,7 @@ package com.example.jdgomes.desfrute.formulario;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 public class GastosFormulario {
@@ -16,6 +17,8 @@ public class GastosFormulario {
     private EditText txtNome;
     private EditText txtMotivo;
     private EditText txtValor;
+    private Spinner itensDespesa;
+    private String[] itensDespesaMock;
 
 
     public GastosFormulario() {
@@ -40,6 +43,10 @@ public class GastosFormulario {
         this.setTiposPrioridades(new String[] {
                 "Alta",
                 "Baixa"
+        });
+
+        this.setItensDespesaMock(new String[] {
+                "Itens 1", "Itens 2", "Itens 3", "Itens 4"
         });
     }
 
@@ -121,5 +128,22 @@ public class GastosFormulario {
 
     public void setTxtValor(EditText txtValor) {
         this.txtValor = txtValor;
+    }
+
+
+    public Spinner getItensDespesa() {
+        return itensDespesa;
+    }
+
+    public void setItensDespesa(Spinner itensDespesa) {
+        this.itensDespesa = itensDespesa;
+    }
+
+    public String[] getItensDespesaMock() {
+        return itensDespesaMock;
+    }
+
+    public void setItensDespesaMock(String[] itensDespesaMock) {
+        this.itensDespesaMock = itensDespesaMock;
     }
 }
