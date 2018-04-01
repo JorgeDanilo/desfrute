@@ -18,6 +18,10 @@ class ItensDespesa  {
     private double valor;
     private Date dataVencimento;
     private String situacaoDespesa;
+    private String motivo;
+    private String prioridade;
+    private String tipo;
+    private String tipoPagamento;
 
 
     public long getId() {
@@ -75,5 +79,37 @@ class ItensDespesa  {
 
     public void setSituacaoDespesa(String situacaoDespesa) {
         this.situacaoDespesa = situacaoDespesa;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public String getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(String prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getTipoPagamento() {
+        return tipoPagamento;
+    }
+
+    public void setTipoPagamento(String tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
     }
 }
