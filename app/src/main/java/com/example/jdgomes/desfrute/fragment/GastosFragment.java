@@ -31,7 +31,6 @@ public class GastosFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_gastos, container, false);
-        this.loadComponents(view);
         return view;
     }
 
@@ -42,38 +41,6 @@ public class GastosFragment extends BaseFragment {
 
     }
 
-    /**
-     * Load components os view.
-     * @return
-     */
-    private void loadComponents(View view) {
-        this.gastosFormulario.setTipoGasto((Spinner) view.findViewById(R.id.spTipo));
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, this.gastosFormulario.getTiposDeGastos());
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.gastosFormulario.getTipoGasto().setAdapter(adapter);
-
-        this.gastosFormulario.setTipoPagamentoSpinner((Spinner)  view.findViewById(R.id.spTipoPagamento));
-        ArrayAdapter<String> adapterTipoPagamento = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, this.gastosFormulario.getTiposPagamentos());
-        adapterTipoPagamento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.gastosFormulario.getTipoPagamentoSpinner().setAdapter(adapterTipoPagamento);
-
-        this.gastosFormulario.setTipoPrioridde((Spinner) view.findViewById(R.id.spPrioridade));
-        ArrayAdapter<String> adapterTipoPrioridade = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, this.gastosFormulario.getTiposPrioridades());
-        adapterTipoPrioridade.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        this.gastosFormulario.getTipoPrioridde().setAdapter(adapterTipoPrioridade);
-
-        this.gastosFormulario.setTxtNome((EditText) view.findViewById(R.id.txtNome));
-        this.gastosFormulario.setTxtMotivo((EditText) view.findViewById(R.id.txtMotivo));
-        this.gastosFormulario.setTxtValor((EditText) view.findViewById(R.id.txtValor));
-
-
-        this.gastosFormulario.setItensDespesa((Spinner) view.findViewById(R.id.spItensDespesa));
-        ArrayAdapter<String> adapterItensDespesas = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, this.gastosFormulario.getItensDespesaMock());
-        this.gastosFormulario.getItensDespesa().setAdapter(adapterItensDespesas);
-
-    }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -82,7 +49,7 @@ public class GastosFragment extends BaseFragment {
                     //TODO: refatorar para o itens da despesa.
                     DespesaDB db = new DespesaDB(getContext());
                     Despesa despesa = new Despesa();
-                    despesa.setNome(this.gastosFormulario.getTxtNome().getText().toString());
+//                    despesa.setNome(this.gastosFormulario.getTxtNome().getText().toString());
 //                    despesa.setValor(Double.parseDouble(this.gastosFormulario.getTxtValor().getText().toString()));
 //                    despesa.setMotivo(this.gastosFormulario.getTxtMotivo().getText().toString());
 //                    despesa.setPrioridade(this.gastosFormulario.getTipoPrioridde().getSelectedItem().toString());
@@ -108,20 +75,22 @@ public class GastosFragment extends BaseFragment {
      */
     private boolean validateForm(GastosFormulario formulario) {
 
-        if ( formulario.getTxtNome().getText().toString().equals("") ) {
-            showToast(this.getActivity(), "Campo Nome é obrigatório");
-            return false;
-        }
+        //TODO: REFATORAR PARA O ITEN DA DESPESA.
 
-        if ( formulario.getTxtValor().getText().toString().equals("") ) {
-            showToast(this.getActivity(), "Campo Valor é obrigatório");
-            return false;
-        }
-
-        if ( formulario.getTxtMotivo().getText().toString().equals("") ) {
-            showToast(this.getActivity(), "Campo Motivo é obrigatório");
-            return false;
-        }
+//        if ( formulario.getTxtNome().getText().toString().equals("") ) {
+//            showToast(this.getActivity(), "Campo Nome é obrigatório");
+//            return false;
+//        }
+//
+//        if ( formulario.getTxtValor().getText().toString().equals("") ) {
+//            showToast(this.getActivity(), "Campo Valor é obrigatório");
+//            return false;
+//        }
+//
+//        if ( formulario.getTxtMotivo().getText().toString().equals("") ) {
+//            showToast(this.getActivity(), "Campo Motivo é obrigatório");
+//            return false;
+//        }
 
         return true;
     }

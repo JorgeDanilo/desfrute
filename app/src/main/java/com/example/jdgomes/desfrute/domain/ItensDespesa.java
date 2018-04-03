@@ -12,16 +12,16 @@ class ItensDespesa  {
     private static final long serialVersionUID = 1L;
 
     private long id;
-    private String nome; // ok
+    private String nome;
     private Date dataCadastro;
-    private String descricao; // ok
-    private double valor; // ok
-    private Date dataVencimento; // ok
-    private EnumSituacaoDespesa situacaoDespesa; // ok
-    private String motivo; // ok => subject icon
-    private String prioridade; // ok => alta, baixa.
-    private String tipo; // ok => trabalho, casa, etc.
-    private String tipoPagamento; // ok = > Cartão, Debito,
+    private String descricao;
+    private double valor;
+    private Date dataVencimento;
+    private EnumSituacaoDespesa situacaoDespesa;
+    private String motivo;
+    private String prioridade;
+    private String tipo;
+    private String tipoPagamento;
 
 
     public long getId() {
