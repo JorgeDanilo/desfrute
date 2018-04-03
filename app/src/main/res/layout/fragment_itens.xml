@@ -27,7 +27,7 @@
             android:id="@+id/labelDescricaoItens"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
-            android:src="@drawable/ic_low_priority_brown_400_24dp" />
+            android:src="@drawable/ic_priority" />
 
         <EditText
             android:id="@+id/txtDescricaoItens"
@@ -55,7 +55,7 @@
             android:id="@+id/labelSituacaoItens"
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
-            android:src="@drawable/ic_low_priority_brown_400_24dp" />
+            android:src="@drawable/ic_priority" />
 
         <Spinner
             android:id="@+id/spSituacaoItens"

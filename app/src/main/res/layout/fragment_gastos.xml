@@ -17,7 +17,7 @@
             android:layout_marginTop="15dp"
             android:layout_height="30dp"
             android:layout_width="30dp"
-            android:src="@drawable/ic_description_brown_300_24dp" />
+            android:src="@drawable/ic_description" />
 
         <EditText
             android:id="@+id/txtNome"
@@ -39,7 +39,7 @@
             android:layout_marginTop="15dp"
             android:layout_height="30dp"
             android:layout_width="30dp"
-            android:src="@drawable/ic_description_brown_300_24dp" />
+            android:src="@drawable/ic_description" />
 
         <Spinner
             android:backgroundTint="@color/gray"
@@ -100,7 +100,7 @@
             <!--android:layout_marginRight="30dp"-->
             <!--android:layout_height="30dp"-->
             <!--android:layout_width="30dp"-->
-            <!--android:src="@drawable/ic_low_priority_brown_400_24dp" />-->
+            <!--android:src="@drawaic_priority24dp" />-->
 
         <!--<Spinner-->
             <!--android:backgroundTint="@color/gray"-->
@@ -139,7 +139,7 @@
             <!--android:layout_marginRight="30dp"-->
             <!--android:layout_height="30dp"-->
             <!--android:layout_width="30dp"-->
-            <!--android:src="@drawable/ic_monetization_on_brown_300_24dp" />-->
+            <!--android:src="@drawaic_money24dp" />-->
 
         <!--<Spinner-->
             <!--android:layout_marginRight="10dp"-->

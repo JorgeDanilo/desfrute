@@ -70,14 +70,15 @@ public class GastosFragment extends BaseFragment {
         switch (item.getItemId()) {
             case R.id.saveGastos:
                 if ( this.validateForm(this.gastosFormulario) ) {
+                    //TODO: refatorar para o itens da despesa.
                     DespesaDB db = new DespesaDB(getContext());
                     Despesa despesa = new Despesa();
                     despesa.setNome(this.gastosFormulario.getTxtNome().getText().toString());
-                    despesa.setValor(Double.parseDouble(this.gastosFormulario.getTxtValor().getText().toString()));
-                    despesa.setMotivo(this.gastosFormulario.getTxtMotivo().getText().toString());
-                    despesa.setPrioridade(this.gastosFormulario.getTipoPrioridde().getSelectedItem().toString());
-                    despesa.setTipo(this.gastosFormulario.getTipoGasto().getSelectedItem().toString());
-                    despesa.setTipoPagamento(this.gastosFormulario.getTipoPagamentoSpinner().getSelectedItem().toString());
+//                    despesa.setValor(Double.parseDouble(this.gastosFormulario.getTxtValor().getText().toString()));
+//                    despesa.setMotivo(this.gastosFormulario.getTxtMotivo().getText().toString());
+//                    despesa.setPrioridade(this.gastosFormulario.getTipoPrioridde().getSelectedItem().toString());
+//                    despesa.setTipo(this.gastosFormulario.getTipoGasto().getSelectedItem().toString());
+//                    despesa.setTipoPagamento(this.gastosFormulario.getTipoPagamentoSpinner().getSelectedItem().toString());
                     long idSaved = db.save(despesa);
                     Toast.makeText(getContext(), "Despesa salva com sucesso", Toast.LENGTH_SHORT).show();
                     Log.i("Id Saved => ", String.valueOf(idSaved));
@@ -89,6 +90,7 @@ public class GastosFragment extends BaseFragment {
                 return super.onOptionsItemSelected(item);
         }
     }
+
 
     /**
      * Checa se há campos vazios no formulario.

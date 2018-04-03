@@ -14,14 +14,14 @@ class ItensDespesa  {
     private long id;
     private String nome;
     private Date dataCadastro;
-    private String descricao;
-    private double valor;
-    private Date dataVencimento;
-    private String situacaoDespesa;
-    private String motivo;
-    private String prioridade;
-    private String tipo;
-    private String tipoPagamento;
+    private String descricao; // ok
+    private double valor; // ok
+    private Date dataVencimento; // ok
+    private EnumSituacaoDespesa situacaoDespesa; // ok
+    private String motivo; // ok => subject icon
+    private String prioridade; // ok => alta, baixa.
+    private String tipo; // ok => trabalho, casa, etc.
+    private String tipoPagamento; // ok = > Cartão, Debito,
 
 
     public long getId() {
@@ -72,12 +72,11 @@ class ItensDespesa  {
         this.dataVencimento = dataVencimento;
     }
 
-
-    public String getSituacaoDespesa() {
+    public EnumSituacaoDespesa getSituacaoDespesa() {
         return situacaoDespesa;
     }
 
-    public void setSituacaoDespesa(String situacaoDespesa) {
+    public void setSituacaoDespesa(EnumSituacaoDespesa situacaoDespesa) {
         this.situacaoDespesa = situacaoDespesa;
     }
 
