@@ -1,70 +1,178 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:stretchColumns="1" >
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:stretchColumns="1">
 
-    <TableRow
-        android:layout_marginTop="15dp">
+
+    <!-- Nome -->
+
+    <TableRow android:layout_marginTop="15dp">
 
         <ImageView
-            android:id="@+id/labelNomeItens"
+            android:id="@+id/labelNome"
             android:layout_marginRight="30dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/ic_date_range_brown_300_24dp" />
+            android:src="@drawable/ic_nome" />
 
         <EditText
             android:id="@+id/txtNome"
+            android:layout_height="match_parent"
             android:layout_marginRight="10dp"
-            android:hint="Nome"
+            android:layout_marginLeft="10dp"
             android:backgroundTint="@color/gray"
-            android:layout_height="match_parent" />
+            android:hint="Nome" />
 
     </TableRow>
 
-    <TableRow>
-        <ImageView
-            android:id="@+id/labelDescricaoItens"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/ic_low_priority_brown_400_24dp" />
 
-        <EditText
-            android:id="@+id/txtDescricaoItens"
-            android:layout_marginRight="10dp"
-            android:backgroundTint="@color/gray"
-            android:layout_width="match_parent" />
-    </TableRow>
+    <!-- Descrição -->
 
     <TableRow>
+
         <ImageView
-            android:id="@+id/labelValorItens"
-            android:layout_marginTop="15dp"
+            android:id="@+id/labelDescricao"
             android:layout_marginRight="30dp"
-            android:src="@drawable/ic_attach_money_brown_300_24dp" />
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_description" />
 
         <EditText
-            android:id="@+id/textValorItens"
-            android:inputType="numberDecimal"
+            android:id="@+id/txtDescricao"
+            android:layout_width="match_parent"
             android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:backgroundTint="@color/gray" />
     </TableRow>
 
-    <TableRow>
-        <ImageView
-            android:id="@+id/labelSituacaoItens"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/ic_low_priority_brown_400_24dp" />
 
-        <Spinner
-            android:id="@+id/spSituacaoItens"
+    <!-- Valor -->
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/labelValor"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_money" />
+
+        <EditText
+            android:id="@+id/textValor"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:backgroundTint="@color/gray"
-            android:layout_marginRight="10dp">
-        </Spinner>
+            android:inputType="numberDecimal" />
     </TableRow>
 
 
+    <!-- Data Vencimento -->
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/labelDataVecimento"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_date" />
+
+        <EditText
+            android:id="@+id/txtDataVecimento"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/gray"
+            android:inputType="date" />
+
+    </TableRow>
+
+
+    <!-- Situacao -->
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/labelSituacao"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_situacao_despesa" />
+
+        <Spinner
+            android:id="@+id/spSituacao"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/gray"></Spinner>
+
+    </TableRow>
+
+
+    <!-- Motivo -->
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/labelMotivo"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_subject" />
+
+        <EditText
+            android:id="@+id/txtMotivo"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/gray"
+            android:inputType="date" />
+
+    </TableRow>
+
+
+    <!-- Prioridade -->
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/labelPriority"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_priority" />
+
+        <Spinner
+            android:id="@+id/spPriority"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+    </TableRow>
+
+
+    <!-- Tipo -->
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/labelTipo"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_subject" />
+
+        <Spinner
+            android:id="@+id/spTipo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+    </TableRow>
+
+
+    <!-- Tipo Pagamento -->
+
+    <TableRow>
+
+        <ImageView
+            android:id="@+id/labelTipoPagamento"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_credit_card_" />
+
+        <Spinner
+            android:id="@+id/spTipoPagamento"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+    </TableRow>
 
 
 </TableLayout>

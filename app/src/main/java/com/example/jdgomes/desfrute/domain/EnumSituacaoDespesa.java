@@ -3,7 +3,8 @@ package com.example.jdgomes.desfrute.domain;
 public enum EnumSituacaoDespesa {
 
     PAGO,
-    NAO_PAGO,
+    A_PAGAR,
     VENCIDO,
+
 
 }

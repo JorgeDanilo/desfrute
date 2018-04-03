@@ -17,114 +17,135 @@
             android:layout_marginTop="15dp"
             android:layout_height="30dp"
             android:layout_width="30dp"
-            android:src="@drawable/ic_description_brown_300_24dp" />
+            android:src="@drawable/ic_description" />
 
         <EditText
             android:id="@+id/txtNome"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
             android:hint="@string/hintNome"
             android:backgroundTint="@color/gray"
             android:layout_width="match_parent" />
     </TableRow>
 
     <TableRow
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp">
+        android:layout_marginTop="20dp">
 
         <ImageView
-            android:id="@+id/labelValor"
+            android:id="@+id/labelItensDespesa"
+            android:layout_marginRight="30dp"
             android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
             android:layout_height="30dp"
             android:layout_width="30dp"
-            android:src="@drawable/ic_attach_money_brown_300_24dp" />
-
-        <EditText
-            android:hint="@string/valor"
-            android:inputType="numberDecimal"
-            android:layout_marginRight="10dp"
-            android:backgroundTint="@color/gray"
-            android:id="@+id/txtValor" />
-    </TableRow>
-
-    <TableRow
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" >
-
-        <ImageView
-            android:id="@+id/labelMotivo"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
-            android:src="@drawable/ic_chrome_reader_mode_brown_300_24dp" />
-
-        <EditText
-            android:hint="@string/motivo"
-            android:layout_marginRight="10dp"
-            android:backgroundTint="@color/gray"
-            android:id="@+id/txtMotivo" />
-    </TableRow>
-
-    <TableRow
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" >
-
-        <ImageView
-            android:id="@+id/labelPrioridade"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
-            android:src="@drawable/ic_low_priority_brown_400_24dp" />
+            android:src="@drawable/ic_description" />
 
         <Spinner
             android:backgroundTint="@color/gray"
             android:layout_marginRight="10dp"
-            android:id="@+id/spPrioridade" />
+            android:id="@+id/spItensDespesa" />
+
     </TableRow>
 
-    <TableRow
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" >
+<!--<TableRow-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginLeft="20dp">-->
 
-        <ImageView
+        <!--<ImageView-->
+            <!--android:id="@+id/labelValor"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:src="@drawable/ic_attach_money_brown_300_24dp" />-->
 
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/labelTipo"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
-            android:src="@drawable/ic_view_day_brown_300_24dp" />
+        <!--<EditText-->
+            <!--android:hint="@string/valor"-->
+            <!--android:inputType="numberDecimal"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:backgroundTint="@color/gray"-->
+            <!--android:id="@+id/txtValor" />-->
+    <!--</TableRow>-->
 
-        <Spinner
-            android:backgroundTint="@color/gray"
-            android:layout_marginRight="10dp"
-            android:id="@+id/spTipo" />
-    </TableRow>
+    <!--<TableRow-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginLeft="20dp" >-->
 
-    <TableRow
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" >
+        <!--<ImageView-->
+            <!--android:id="@+id/labelMotivo"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:src="@drawable/ic_chrome_reader_mode_brown_300_24dp" />-->
 
-        <ImageView
-            android:id="@+id/labelTipoPagamento"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="30dp"
-            android:layout_height="30dp"
-            android:layout_width="30dp"
-            android:src="@drawable/ic_monetization_on_brown_300_24dp" />
+        <!--<EditText-->
+            <!--android:hint="@string/motivo"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:backgroundTint="@color/gray"-->
+            <!--android:id="@+id/txtMotivo" />-->
+    <!--</TableRow>-->
 
-        <Spinner
-            android:layout_marginRight="10dp"
-            android:backgroundTint="@color/gray"
-            android:id="@+id/spTipoPagamento" />
-    </TableRow>
+    <!--<TableRow-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginLeft="20dp" >-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/labelPrioridade"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:src="@drawaic_priority24dp" />-->
+
+        <!--<Spinner-->
+            <!--android:backgroundTint="@color/gray"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:id="@+id/spPrioridade" />-->
+    <!--</TableRow>-->
+
+    <!--<TableRow-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginLeft="20dp" >-->
+
+        <!--<ImageView-->
+
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:id="@+id/labelTipo"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:src="@drawable/ic_view_day_brown_300_24dp" />-->
+
+        <!--<Spinner-->
+            <!--android:backgroundTint="@color/gray"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:id="@+id/spTipo" />-->
+    <!--</TableRow>-->
+
+    <!--<TableRow-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:layout_marginLeft="20dp" >-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/labelTipoPagamento"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_marginRight="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:src="@drawaic_money24dp" />-->
+
+        <!--<Spinner-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:backgroundTint="@color/gray"-->
+            <!--android:id="@+id/spTipoPagamento" />-->
+    <!--</TableRow>-->
 
     <TableRow
         android:layout_marginTop="5dp"
