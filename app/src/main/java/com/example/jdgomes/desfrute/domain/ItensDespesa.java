@@ -15,14 +15,13 @@ class ItensDespesa  {
     private String nome;
     private Date dataCadastro;
     private String descricao;
-    private double valor;
+    private Double valor;
     private Date dataVencimento;
-    private EnumSituacaoDespesa situacaoDespesa;
     private String motivo;
-    private String prioridade;
-    private String tipo;
-    private String tipoPagamento;
-
+    private EnumSituacaoDespesa situacaoDespesa;
+    private EnumTipoPrioridade prioridade;
+    private EnumTipoGasto tipoGasto;
+    private EnumTipoPagamento tipoPagamento;
 
     public long getId() {
         return id;
@@ -56,11 +55,11 @@ class ItensDespesa  {
         this.descricao = descricao;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
@@ -72,14 +71,6 @@ class ItensDespesa  {
         this.dataVencimento = dataVencimento;
     }
 
-    public EnumSituacaoDespesa getSituacaoDespesa() {
-        return situacaoDespesa;
-    }
-
-    public void setSituacaoDespesa(EnumSituacaoDespesa situacaoDespesa) {
-        this.situacaoDespesa = situacaoDespesa;
-    }
-
     public String getMotivo() {
         return motivo;
     }
@@ -88,27 +79,35 @@ class ItensDespesa  {
         this.motivo = motivo;
     }
 
-    public String getPrioridade() {
+    public EnumSituacaoDespesa getSituacaoDespesa() {
+        return situacaoDespesa;
+    }
+
+    public void setSituacaoDespesa(EnumSituacaoDespesa situacaoDespesa) {
+        this.situacaoDespesa = situacaoDespesa;
+    }
+
+    public EnumTipoPrioridade getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(String prioridade) {
+    public void setPrioridade(EnumTipoPrioridade prioridade) {
         this.prioridade = prioridade;
     }
 
-    public String getTipo() {
-        return tipo;
+    public EnumTipoGasto getTipoGasto() {
+        return tipoGasto;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipoGasto(EnumTipoGasto tipoGasto) {
+        this.tipoGasto = tipoGasto;
     }
 
-    public String getTipoPagamento() {
+    public EnumTipoPagamento getTipoPagamento() {
         return tipoPagamento;
     }
 
-    public void setTipoPagamento(String tipoPagamento) {
+    public void setTipoPagamento(EnumTipoPagamento tipoPagamento) {
         this.tipoPagamento = tipoPagamento;
     }
 }

@@ -1,52 +1,67 @@
 package com.example.jdgomes.desfrute.formulario;
 
 
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.example.jdgomes.desfrute.domain.EnumTipoGasto;
-import com.example.jdgomes.desfrute.domain.EnumTipoPagamento;
-import com.example.jdgomes.desfrute.domain.EnumTipoPrioridade;
-
 public class ItensFormulario {
 
-    private EnumTipoGasto tiposDeGastos;
-    private EnumTipoPagamento tiposPagamentos;
-    private EnumTipoPrioridade tiposPrioridades;
+    private EditText nome;
+    private EditText descricao;
+    private EditText dataVecimento;
+    private EditText motivo;
 
+    private Spinner situacaoDespesa;
+    private Spinner prioridade;
     private Spinner tipoGasto;
-    private Spinner tipoPagamentoSpinner;
-    private Spinner tipoPrioridde;
-    private Button btnSave;
-    private EditText txtNome;
-    private EditText txtMotivo;
-    private EditText txtValor;
-    private Spinner itensDespesa;
+    private Spinner tipoPagamento;
 
-
-    public EnumTipoGasto getTiposDeGastos() {
-        return tiposDeGastos;
+    public EditText getNome() {
+        return nome;
     }
 
-    public void setTiposDeGastos(EnumTipoGasto tiposDeGastos) {
-        this.tiposDeGastos = tiposDeGastos;
+    public void setNome(EditText nome) {
+        this.nome = nome;
     }
 
-    public EnumTipoPagamento getTiposPagamentos() {
-        return tiposPagamentos;
+    public EditText getDescricao() {
+        return descricao;
     }
 
-    public void setTiposPagamentos(EnumTipoPagamento tiposPagamentos) {
-        this.tiposPagamentos = tiposPagamentos;
+    public void setDescricao(EditText descricao) {
+        this.descricao = descricao;
     }
 
-    public EnumTipoPrioridade getTiposPrioridades() {
-        return tiposPrioridades;
+    public EditText getDataVecimento() {
+        return dataVecimento;
     }
 
-    public void setTiposPrioridades(EnumTipoPrioridade tiposPrioridades) {
-        this.tiposPrioridades = tiposPrioridades;
+    public void setDataVecimento(EditText dataVecimento) {
+        this.dataVecimento = dataVecimento;
+    }
+
+    public EditText getMotivo() {
+        return motivo;
+    }
+
+    public void setMotivo(EditText motivo) {
+        this.motivo = motivo;
+    }
+
+    public Spinner getSituacaoDespesa() {
+        return situacaoDespesa;
+    }
+
+    public void setSituacaoDespesa(Spinner situacaoDespesa) {
+        this.situacaoDespesa = situacaoDespesa;
+    }
+
+    public Spinner getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(Spinner prioridade) {
+        this.prioridade = prioridade;
     }
 
     public Spinner getTipoGasto() {
@@ -57,60 +72,11 @@ public class ItensFormulario {
         this.tipoGasto = tipoGasto;
     }
 
-    public Spinner getTipoPagamentoSpinner() {
-        return tipoPagamentoSpinner;
+    public Spinner getTipoPagamento() {
+        return tipoPagamento;
     }
 
-    public void setTipoPagamentoSpinner(Spinner tipoPagamentoSpinner) {
-        this.tipoPagamentoSpinner = tipoPagamentoSpinner;
+    public void setTipoPagamento(Spinner tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
     }
-
-    public Spinner getTipoPrioridde() {
-        return tipoPrioridde;
-    }
-
-    public void setTipoPrioridde(Spinner tipoPrioridde) {
-        this.tipoPrioridde = tipoPrioridde;
-    }
-
-    public Button getBtnSave() {
-        return btnSave;
-    }
-
-    public void setBtnSave(Button btnSave) {
-        this.btnSave = btnSave;
-    }
-
-    public EditText getTxtNome() {
-        return txtNome;
-    }
-
-    public void setTxtNome(EditText txtNome) {
-        this.txtNome = txtNome;
-    }
-
-    public EditText getTxtMotivo() {
-        return txtMotivo;
-    }
-
-    public void setTxtMotivo(EditText txtMotivo) {
-        this.txtMotivo = txtMotivo;
-    }
-
-    public EditText getTxtValor() {
-        return txtValor;
-    }
-
-    public void setTxtValor(EditText txtValor) {
-        this.txtValor = txtValor;
-    }
-
-    public Spinner getItensDespesa() {
-        return itensDespesa;
-    }
-
-    public void setItensDespesa(Spinner itensDespesa) {
-        this.itensDespesa = itensDespesa;
-    }
-
 }

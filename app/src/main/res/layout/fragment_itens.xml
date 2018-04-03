@@ -98,8 +98,7 @@
         <Spinner
             android:id="@+id/spSituacao"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:backgroundTint="@color/gray"></Spinner>
+            android:layout_marginLeft="10dp" />
 
     </TableRow>
 
