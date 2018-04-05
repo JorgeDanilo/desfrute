@@ -7,8 +7,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name="com.orm.SugarApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -22,6 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activity.GastosActivity"
             android:label="@string/title_activity_gastos"
@@ -29,7 +30,13 @@
         <activity
             android:name=".activity.ItensActivity"
             android:label="@string/title_activity_itens"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data android:name="DATABASE" android:value="desfrute.db" />
+        <meta-data android:name="VERSION" android:value="2" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.example.jdgomes.desfrute.domain" />
+
     </application>
 
 </manifest>
