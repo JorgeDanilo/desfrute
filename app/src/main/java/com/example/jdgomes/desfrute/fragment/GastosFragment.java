@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import com.example.jdgomes.desfrute.activity.MainActivity;
 import com.example.jdgomes.desfrute.R;
-import com.example.jdgomes.desfrute.db.DespesaDB;
 import com.example.jdgomes.desfrute.domain.Despesa;
 import com.example.jdgomes.desfrute.formulario.GastosFormulario;
 
@@ -39,21 +38,8 @@ public class GastosFragment extends BaseFragment {
         switch (item.getItemId()) {
             case R.id.saveGastos:
                 if ( this.validateForm(this.gastosFormulario) ) {
+                    //Save.
                     //TODO: refatorar para o itens da despesa.
-                    DespesaDB db = new DespesaDB(getContext());
-                    Despesa despesa = new Despesa();
-//                    despesa.setNome(this.gastosFormulario.getTxtNome().getText().toString());
-//                    despesa.setValor(Double.parseDouble(this.gastosFormulario.getTxtValor().getText().toString()));
-//                    despesa.setMotivo(this.gastosFormulario.getTxtMotivo().getText().toString());
-//                    despesa.setPrioridade(this.gastosFormulario.getTipoPrioridde().getSelectedItem().toString());
-//                    despesa.setTipo(this.gastosFormulario.getTipoGasto().getSelectedItem().toString());
-//                    despesa.setTipoPagamento(this.gastosFormulario.getTipoPagamentoSpinner().getSelectedItem().toString());
-                    long idSaved = db.save(despesa);
-                    Toast.makeText(getContext(), "Despesa salva com sucesso", Toast.LENGTH_SHORT).show();
-                    Log.i("Id Saved => ", String.valueOf(idSaved));
-                    Intent intent = new Intent(getContext(), MainActivity.class);
-                    startActivity(intent);
-                    return true;
                 }
             default:
                 return super.onOptionsItemSelected(item);
