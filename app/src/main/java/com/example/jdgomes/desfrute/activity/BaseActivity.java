@@ -16,9 +16,9 @@ public class BaseActivity extends AppCompatActivity {
     ListView listaGastos;
 
     protected void carregaListaGastos() {
-        List<Despesa> despesas = Despesa.listAll(Despesa.class);
-        this.listaGastos = findViewById(R.id.list);
-        AdapterGastos adapterGastos = new AdapterGastos(despesas, this);
-        this.listaGastos.setAdapter(adapterGastos);
+    //    List<Despesa> despesas = Despesa.listAll(Despesa.class);
+      //  this.listaGastos = findViewById(R.id.list);
+        //AdapterGastos adapterGastos = new AdapterGastos(despesas, this);
+        //this.listaGastos.setAdapter(adapterGastos);
     }
 }

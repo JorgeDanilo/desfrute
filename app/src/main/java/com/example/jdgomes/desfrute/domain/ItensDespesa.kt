@@ -7,7 +7,7 @@ import java.util.Date
 
 
 @Parcel(Parcel.Serialization.BEAN)
-internal class ItensDespesa : SugarRecord<ItensDespesa>() {
+internal class ItensDespesa : SugarRecord() {
 
     private val id: Long = 0
     private val nome: String? = null
