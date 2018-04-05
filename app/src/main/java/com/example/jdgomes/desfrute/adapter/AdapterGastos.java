@@ -59,10 +59,10 @@ public class AdapterGastos extends BaseAdapter {
         Button btnDeleteDespesa = view.findViewById(R.id.btnDeletaDespesa);
         Button btnDetalharDespesa = view.findViewById(R.id.btnDetalharDespesa);
 
-        nomeDespesa.setText(despesa.getNome());
-        motivoDespesa.setText(despesa.getMotivo());
-        valorDespesa.setText(String.valueOf(despesa.getValor()));
-        prioridadeDespesa.setText(despesa.getPrioridade());
+//        nomeDespesa.setText(despesa.getNome());
+//        motivoDespesa.setText(despesa.getMotivo());
+//        valorDespesa.setText(String.valueOf(despesa.getValor()));
+//        prioridadeDespesa.setText(despesa.getPrioridade());
 
         view.setOnLongClickListener(new View.OnLongClickListener() {
 
@@ -77,7 +77,7 @@ public class AdapterGastos extends BaseAdapter {
                         // here you can add functions
                     }
                 });
-                alertDialog.setIcon(R.drawable.ic_credit_card_blue_200_48dp);
+                alertDialog.setIcon(R.drawable.ic_credit_card_);
                 alertDialog.show();
                 return true;
             }
@@ -97,7 +97,7 @@ public class AdapterGastos extends BaseAdapter {
                         // here you can add functions
                     }
                 });
-                alertDialog.setIcon(R.drawable.ic_credit_card_blue_200_48dp);
+                alertDialog.setIcon(R.drawable.ic_credit_card_);
                 alertDialog.show();
             }
         });

@@ -1,15 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     android:stretchColumns="1"  >
 
 
-    <TableRow
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
+    <!-- Nome despesa -->
+
+    <TableRow android:layout_marginTop="20dp">
 
         <ImageView
             android:id="@+id/labelNome"
@@ -28,124 +28,26 @@
             android:layout_width="match_parent" />
     </TableRow>
 
-    <TableRow
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="20dp">
 
+    <!-- Itens Despesa -->
+
+    <TableRow
+        android:layout_marginTop="20dp" >
         <ImageView
-            android:id="@+id/labelItensDespesa"
+            android:id="@+id/labelItensDesesa"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="15dp"
             android:layout_height="30dp"
             android:layout_width="30dp"
-            android:src="@drawable/ic_description" />
+            android:src="@drawable/ic_itens_despesa" />
 
+
+        <!-- Ver melhor situacao para isso. -->
         <Spinner
-            android:backgroundTint="@color/gray"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/gray"
             android:id="@+id/spItensDespesa" />
-
     </TableRow>
-
-<!--<TableRow-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginLeft="20dp">-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/labelValor"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_height="30dp"-->
-            <!--android:layout_width="30dp"-->
-            <!--android:src="@drawable/ic_attach_money_brown_300_24dp" />-->
-
-        <!--<EditText-->
-            <!--android:hint="@string/valor"-->
-            <!--android:inputType="numberDecimal"-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:backgroundTint="@color/gray"-->
-            <!--android:id="@+id/txtValor" />-->
-    <!--</TableRow>-->
-
-    <!--<TableRow-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginLeft="20dp" >-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/labelMotivo"-->
-            <!--android:layout_marginTop="15dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_height="30dp"-->
-            <!--android:layout_width="30dp"-->
-            <!--android:src="@drawable/ic_chrome_reader_mode_brown_300_24dp" />-->
-
-        <!--<EditText-->
-            <!--android:hint="@string/motivo"-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:backgroundTint="@color/gray"-->
-            <!--android:id="@+id/txtMotivo" />-->
-    <!--</TableRow>-->
-
-    <!--<TableRow-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginLeft="20dp" >-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/labelPrioridade"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_height="30dp"-->
-            <!--android:layout_width="30dp"-->
-            <!--android:src="@drawaic_priority24dp" />-->
-
-        <!--<Spinner-->
-            <!--android:backgroundTint="@color/gray"-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:id="@+id/spPrioridade" />-->
-    <!--</TableRow>-->
-
-    <!--<TableRow-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginLeft="20dp" >-->
-
-        <!--<ImageView-->
-
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:id="@+id/labelTipo"-->
-            <!--android:layout_height="30dp"-->
-            <!--android:layout_width="30dp"-->
-            <!--android:src="@drawable/ic_view_day_brown_300_24dp" />-->
-
-        <!--<Spinner-->
-            <!--android:backgroundTint="@color/gray"-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:id="@+id/spTipo" />-->
-    <!--</TableRow>-->
-
-    <!--<TableRow-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:layout_marginRight="20dp"-->
-        <!--android:layout_marginLeft="20dp" >-->
-
-        <!--<ImageView-->
-            <!--android:id="@+id/labelTipoPagamento"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--android:layout_marginRight="30dp"-->
-            <!--android:layout_height="30dp"-->
-            <!--android:layout_width="30dp"-->
-            <!--android:src="@drawaic_money24dp" />-->
-
-        <!--<Spinner-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:backgroundTint="@color/gray"-->
-            <!--android:id="@+id/spTipoPagamento" />-->
-    <!--</TableRow>-->
-
 
 </TableLayout>
