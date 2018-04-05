@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.jdgomes.desfrute.domain.Despesa;
@@ -34,11 +33,6 @@ public class DespesaDB {
         try {
             ContentValues values = new ContentValues();
             values.put("nome", despesa.getNome());
-            values.put("valor", despesa.getValor());
-            values.put("motivo", despesa.getMotivo());
-            values.put("prioridade", despesa.getPrioridade());
-            values.put("tipoDespesa", despesa.getTipo());
-            values.put("tipoPagamento", despesa.getTipoPagamento());
             if(id != 0) {
                 String _id = String.valueOf(despesa.getId());
                 String[] whereArgs = {_id};
@@ -80,11 +74,6 @@ public class DespesaDB {
                 despesas.add(despesa);
                 despesa.setId(c.getLong(c.getColumnIndex("_id")));
                 despesa.setNome(c.getString(c.getColumnIndex("nome")));
-                despesa.setValor(c.getDouble(c.getColumnIndex("valor")));
-                despesa.setMotivo(c.getString(c.getColumnIndex("motivo")));
-                despesa.setPrioridade(c.getString(c.getColumnIndex("prioridade")));
-                despesa.setTipo(c.getString(c.getColumnIndex("tipoDespesa")));
-                despesa.setTipoPagamento(c.getString(c.getColumnIndex("tipoPagamento")));
             } while (c.moveToNext());
         }
         return despesas;
