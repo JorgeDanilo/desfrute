@@ -6,7 +6,6 @@ import android.support.v7.widget.Toolbar
 import android.view.Menu
 
 import com.example.jdgomes.desfrute.R
-import com.example.jdgomes.desfrute.fragment.GastosFragment
 
 class GastosActivity : AppCompatActivity() {
 
@@ -16,14 +15,6 @@ class GastosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_gastos)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        val fm = supportFragmentManager
-        if (savedInstanceState == null) {
-            val ft = fm.beginTransaction()
-            val gastosFragment = GastosFragment()
-            val b = Bundle()
-            ft.add(R.id.layoutFrag, gastosFragment, "gastos")
-            ft.commit()
-        }
 
     }
 
