@@ -13,7 +13,6 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        carregaListaGastos()
         goToNewGastos()
     }
 
