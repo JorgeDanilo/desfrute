@@ -1,24 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/layoutFrag"
-    android:stretchColumns="1">
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:stretchColumns="1"  >
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <!-- Nome despesa -->
 
-    </android.support.design.widget.AppBarLayout>
+    <TableRow android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/labelNome"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:src="@drawable/ic_description" />
+
+        <EditText
+            android:id="@+id/txtNomeGastos"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/hintNome"
+            android:backgroundTint="@color/gray"
+            android:layout_width="match_parent" />
+    </TableRow>
+
+
+    <!-- Itens Despesa -->
+
+    <TableRow
+        android:layout_marginTop="20dp" >
+        <ImageView
+            android:id="@+id/labelItensDesesa"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:src="@drawable/ic_itens_despesa" />
+
+
+        <!-- Ver melhor situacao para isso. -->
+        <Spinner
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/gray"
+            android:id="@+id/spItensDespesa" />
+    </TableRow>
 
 </TableLayout>
